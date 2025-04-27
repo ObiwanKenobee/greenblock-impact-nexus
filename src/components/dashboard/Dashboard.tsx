@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 import { UserButton } from "@/components/dashboard/UserButton";
 import WalletCard from "@/components/dashboard/WalletCard";
 import ImpactMetrics from "@/components/dashboard/ImpactMetrics";
