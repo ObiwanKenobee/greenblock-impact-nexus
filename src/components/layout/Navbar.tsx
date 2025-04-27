@@ -51,15 +51,15 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link to="/dashboard">
+          <Link to="/auth">
             <Button variant="outline" size="sm" className="hidden sm:flex items-center gap-2">
               <Wallet className="h-4 w-4" />
-              <span>My Wallet</span>
+              <span>Sign In</span>
             </Button>
           </Link>
           
-          <Link to="/dashboard">
-            <Button size="sm">Dashboard</Button>
+          <Link to="/auth">
+            <Button size="sm">Register</Button>
           </Link>
 
           {/* Mobile Navigation */}
@@ -87,8 +87,13 @@ const Navbar = () => {
                         {link.name}
                       </Link>
                     ))}
+                    <Link to="/auth" className="text-foreground/80 hover:text-primary transition-colors py-2 border-b border-border">
+                      Sign In
+                    </Link>
                   </nav>
-                  <Button className="w-full">Dashboard</Button>
+                  <Link to="/auth">
+                    <Button className="w-full">Register</Button>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
