@@ -46,6 +46,9 @@ const Auth = () => {
     // In a real application, this would verify the OTP with the backend
     toast.success("Authentication successful!");
     
+    // Set authentication status
+    localStorage.setItem("isAuthenticated", "true");
+    
     // Mock user account creation
     setTimeout(() => {
       toast.success(`Your GreenBlock Digital Identity has been created!`);
