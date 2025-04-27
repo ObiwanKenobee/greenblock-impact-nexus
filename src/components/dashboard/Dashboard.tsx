@@ -41,89 +41,93 @@ const Dashboard = () => {
               <TabsTrigger value="marketplace">Marketplace</TabsTrigger>
               <TabsTrigger value="settings">Settings</TabsTrigger>
             </TabsList>
+          
+            <div className="mt-6">
+              <TabsContent value="overview">
+                <div className="grid gap-6">
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <StatCard 
+                      icon={Wallet}
+                      label="Carbon Credits"
+                      value="25.4 tCO₂e"
+                      trend={{ value: 12.3, isPositive: true }}
+                    />
+                    <StatCard 
+                      icon={TreeDeciduous}
+                      label="Trees Planted"
+                      value="133"
+                      trend={{ value: 8.7, isPositive: true }}
+                    />
+                    <StatCard 
+                      icon={Users}
+                      label="Network Connections"
+                      value="28"
+                      trend={{ value: 5.2, isPositive: true }}
+                    />
+                    <StatCard 
+                      icon={ChartBar}
+                      label="Impact Score"
+                      value="87/100"
+                      trend={{ value: 3.1, isPositive: true }}
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ImpactMetrics />
+                    <WalletCard />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <SupplyChainScanner />
+                    <div className="grid grid-cols-1 gap-6">
+                      <ImpactVerification />
+                    </div>
+                  </div>
+                  
+                  <ActivityFeed />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="wallet">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  <WalletCard className="lg:col-span-2" />
+                  <ActivityFeed className="md:col-span-2 lg:col-span-1" />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="impact">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <ImpactMetrics className="md:col-span-2" />
+                  <ImpactVerification />
+                  <ActivityFeed />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="supply-chain">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <SupplyChainScanner className="md:col-span-2" />
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="marketplace">
+                <div className="flex flex-col items-center justify-center min-h-[400px] text-center p-4 border rounded-lg">
+                  <h3 className="text-2xl font-medium mb-2">Marketplace Coming Soon</h3>
+                  <p className="text-muted-foreground">Trade carbon credits and connect with regenerative partners</p>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="settings">
+                <div className="flex flex-col items-center justify-center min-h-[400px] text-center p-4 border rounded-lg">
+                  <h3 className="text-2xl font-medium mb-2">Settings Coming Soon</h3>
+                  <p className="text-muted-foreground">Configure your GreenBlock platform preferences</p>
+                </div>
+              </TabsContent>
+            </div>
           </Tabs>
         </div>
       </header>
       <main className="container max-w-screen-2xl flex-1 py-6">
-        <TabsContent value="overview" className="mt-0">
-          <div className="grid gap-6">
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <StatCard 
-                icon={Wallet}
-                label="Carbon Credits"
-                value="25.4 tCO₂e"
-                trend={{ value: 12.3, isPositive: true }}
-              />
-              <StatCard 
-                icon={TreeDeciduous}
-                label="Trees Planted"
-                value="133"
-                trend={{ value: 8.7, isPositive: true }}
-              />
-              <StatCard 
-                icon={Users}
-                label="Network Connections"
-                value="28"
-                trend={{ value: 5.2, isPositive: true }}
-              />
-              <StatCard 
-                icon={ChartBar}
-                label="Impact Score"
-                value="87/100"
-                trend={{ value: 3.1, isPositive: true }}
-              />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <ImpactMetrics />
-              <WalletCard />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <SupplyChainScanner />
-              <div className="grid grid-cols-1 gap-6">
-                <ImpactVerification />
-              </div>
-            </div>
-            
-            <ActivityFeed />
-          </div>
-        </TabsContent>
-
-        <TabsContent value="wallet" className="mt-0">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <WalletCard className="lg:col-span-2" />
-            <ActivityFeed className="md:col-span-2 lg:col-span-1" />
-          </div>
-        </TabsContent>
-
-        <TabsContent value="impact" className="mt-0">
-          <div className="grid gap-4 md:grid-cols-2">
-            <ImpactMetrics className="md:col-span-2" />
-            <ImpactVerification />
-            <ActivityFeed />
-          </div>
-        </TabsContent>
-
-        <TabsContent value="supply-chain" className="mt-0">
-          <div className="grid gap-4 md:grid-cols-2">
-            <SupplyChainScanner className="md:col-span-2" />
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="marketplace">
-          <div className="flex flex-col items-center justify-center min-h-[400px] text-center p-4 border rounded-lg">
-            <h3 className="text-2xl font-medium mb-2">Marketplace Coming Soon</h3>
-            <p className="text-muted-foreground">Trade carbon credits and connect with regenerative partners</p>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="settings">
-          <div className="flex flex-col items-center justify-center min-h-[400px] text-center p-4 border rounded-lg">
-            <h3 className="text-2xl font-medium mb-2">Settings Coming Soon</h3>
-            <p className="text-muted-foreground">Configure your GreenBlock platform preferences</p>
-          </div>
-        </TabsContent>
+        {/* Main content area is now empty since all tabs content has been moved inside the Tabs component */}
       </main>
     </div>
   );
